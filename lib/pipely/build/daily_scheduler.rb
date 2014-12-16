@@ -5,13 +5,11 @@ module Pipely
     # time.
     #
     class DailyScheduler
+      attr_accessor :period
 
-      def initialize(start_time)
+      def initialize(start_time, period)
         @start_time = start_time
-      end
-
-      def period
-        '24 hours'
+        @period = period || '24 Hours'
       end
 
       def start_date_time

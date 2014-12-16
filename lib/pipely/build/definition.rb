@@ -37,7 +37,7 @@ module Pipely
       def scheduler
         case config[:scheduler]
         when 'daily'
-          DailyScheduler.new(config[:start_time])
+          DailyScheduler.new(config[:start_time], config[:period])
         when 'now'
           RightNowScheduler.new
         else
